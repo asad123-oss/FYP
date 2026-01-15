@@ -1,16 +1,12 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "publish/**/*",
-      "use": "@vercel/static"
-    }
-  ],
+  "cleanUrls": true,
   "routes": [
+    {
+      "handle": "filesystem"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
-
     }
   ]
 }
