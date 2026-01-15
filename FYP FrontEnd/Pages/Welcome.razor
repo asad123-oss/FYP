@@ -1,0 +1,123 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+@code {
+    void gotoLogin()
+    {
+        Navigation.NavigateTo("/login");
+        
+    }
+
+
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome | LSX Sports Tech</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Mobile Screen Frame */
+        .screen {
+            width: 390px;
+            max-width: 95%;
+            height: 800px;
+            max-height: 95vh;
+            background: url('/images/stadium.jpeg') no-repeat center center / cover;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* Overlay Blur */
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Logo */
+        .logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: url() no-repeat center center / cover;
+        }
+
+        /* Welcome Text */
+        .welcome-text {
+            margin-top: 40px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #E31212;
+            line-height: 35px;
+        }
+
+        /* Login Button */
+        .login-btn {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            padding: 20px;
+            background: #2b2b2b;
+            color: white;
+            font-size: 22px;
+            border-radius: 45px;
+            border: none;
+            font-weight: bold;
+            letter-spacing: 3px;
+            cursor: pointer;
+        }
+
+            .login-btn:hover {
+                background: #E31212;
+                transition: .3s;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="screen">
+        <div class="overlay">
+
+            <div class="logo"></div>
+
+            <div class="welcome-text">
+                Welcome to the future<br />
+                of sports Technology
+            </div>
+
+            <form method="get" action="/Login">
+                <button class="login-btn" @onclick="gotoLogin">LOG IN</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
