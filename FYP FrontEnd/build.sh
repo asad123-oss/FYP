@@ -9,4 +9,4 @@ export PATH=$PATH:$HOME/.dotnet
 
 # Project publish karne ke liye
 # 'YourProjectName.csproj' ko apne file name se badal dein
-dotnet publish YourProjectName.csproj -c Release -o output
+dotnet publish *.csproj -c Release -o output
